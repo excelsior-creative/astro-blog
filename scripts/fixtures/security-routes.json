@@ -1,0 +1,262 @@
+[
+  {
+    "path": "/404.html",
+    "canonical": "https://astro-paper.pages.dev/404/"
+  },
+  {
+    "path": "/about/",
+    "canonical": "https://astro-paper.pages.dev/about/"
+  },
+  {
+    "path": "/",
+    "canonical": "https://astro-paper.pages.dev/"
+  },
+  {
+    "path": "/posts/1/",
+    "canonical": "https://astro-paper.pages.dev/posts/1/"
+  },
+  {
+    "path": "/posts/2/",
+    "canonical": "https://astro-paper.pages.dev/posts/2/"
+  },
+  {
+    "path": "/posts/3/",
+    "canonical": "https://astro-paper.pages.dev/posts/3/"
+  },
+  {
+    "path": "/posts/4/",
+    "canonical": "https://astro-paper.pages.dev/posts/4/"
+  },
+  {
+    "path": "/posts/5/",
+    "canonical": "https://astro-paper.pages.dev/posts/5/"
+  },
+  {
+    "path": "/posts/6/",
+    "canonical": "https://astro-paper.pages.dev/posts/6/"
+  },
+  {
+    "path": "/posts/adding-new-posts-in-astropaper-theme/",
+    "canonical": "https://astro-paper.pages.dev/posts/adding-new-posts-in-astropaper-theme/"
+  },
+  {
+    "path": "/posts/astro-paper-2/",
+    "canonical": "https://astro-paper.pages.dev/posts/astro-paper-2/"
+  },
+  {
+    "path": "/posts/astro-paper-v3/",
+    "canonical": "https://astro-paper.pages.dev/posts/astro-paper-v3/"
+  },
+  {
+    "path": "/posts/astro-paper-v4/",
+    "canonical": "https://astro-paper.pages.dev/posts/astro-paper-v4/"
+  },
+  {
+    "path": "/posts/customizing-astropaper-theme-color-schemes/",
+    "canonical": "https://astro-paper.pages.dev/posts/customizing-astropaper-theme-color-schemes/"
+  },
+  {
+    "path": "/posts/dynamic-og-image-generation-in-astropaper-blog-posts/",
+    "canonical": "https://astro-paper.pages.dev/posts/dynamic-og-image-generation-in-astropaper-blog-posts/"
+  },
+  {
+    "path": "/posts/how-do-i-develop-my-portfolio-and-blog/",
+    "canonical": "https://astro-paper.pages.dev/posts/how-do-i-develop-my-portfolio-and-blog/"
+  },
+  {
+    "path": "/posts/how-do-i-develop-my-terminal-portfolio-website-with-react/",
+    "canonical": "https://astro-paper.pages.dev/posts/how-do-i-develop-my-terminal-portfolio-website-with-react/"
+  },
+  {
+    "path": "/posts/how-to-add-a-new-social-icon/",
+    "canonical": "https://astro-paper.pages.dev/posts/how-to-add-a-new-social-icon/"
+  },
+  {
+    "path": "/posts/how-to-add-estimated-reading-time/",
+    "canonical": "https://astro-paper.pages.dev/posts/how-to-add-estimated-reading-time/"
+  },
+  {
+    "path": "/posts/how-to-configure-astropaper-theme/",
+    "canonical": "https://astro-paper.pages.dev/posts/how-to-configure-astropaper-theme/"
+  },
+  {
+    "path": "/posts/how-to-connect-astro-paper-blog-with-forestry-cms/",
+    "canonical": "https://astro-paper.pages.dev/posts/how-to-connect-astro-paper-blog-with-forestry-cms/"
+  },
+  {
+    "path": "/posts/how-to-update-dependencies/",
+    "canonical": "https://astro-paper.pages.dev/posts/how-to-update-dependencies/"
+  },
+  {
+    "path": "/posts/",
+    "canonical": "https://astro-paper.pages.dev/posts/"
+  },
+  {
+    "path": "/posts/predefined-color-schemes/",
+    "canonical": "https://astro-paper.pages.dev/posts/predefined-color-schemes/"
+  },
+  {
+    "path": "/posts/setting-dates-via-git-hooks/",
+    "canonical": "https://smale.codes/posts/setting-dates-via-git-hooks/"
+  },
+  {
+    "path": "/posts/tailwind-typography/",
+    "canonical": "https://astro-paper.pages.dev/posts/tailwind-typography/"
+  },
+  {
+    "path": "/search/",
+    "canonical": "https://astro-paper.pages.dev/search/"
+  },
+  {
+    "path": "/tags/astro-paper/1/",
+    "canonical": "https://astro-paper.pages.dev/tags/astro-paper/1/"
+  },
+  {
+    "path": "/tags/astro-paper/",
+    "canonical": "https://astro-paper.pages.dev/tags/astro-paper/"
+  },
+  {
+    "path": "/tags/astro/1/",
+    "canonical": "https://astro-paper.pages.dev/tags/astro/1/"
+  },
+  {
+    "path": "/tags/astro/",
+    "canonical": "https://astro-paper.pages.dev/tags/astro/"
+  },
+  {
+    "path": "/tags/blog/1/",
+    "canonical": "https://astro-paper.pages.dev/tags/blog/1/"
+  },
+  {
+    "path": "/tags/blog/",
+    "canonical": "https://astro-paper.pages.dev/tags/blog/"
+  },
+  {
+    "path": "/tags/color-schemes/1/",
+    "canonical": "https://astro-paper.pages.dev/tags/color-schemes/1/"
+  },
+  {
+    "path": "/tags/color-schemes/",
+    "canonical": "https://astro-paper.pages.dev/tags/color-schemes/"
+  },
+  {
+    "path": "/tags/configuration/1/",
+    "canonical": "https://astro-paper.pages.dev/tags/configuration/1/"
+  },
+  {
+    "path": "/tags/configuration/",
+    "canonical": "https://astro-paper.pages.dev/tags/configuration/"
+  },
+  {
+    "path": "/tags/contextapi/1/",
+    "canonical": "https://astro-paper.pages.dev/tags/contextapi/1/"
+  },
+  {
+    "path": "/tags/contextapi/",
+    "canonical": "https://astro-paper.pages.dev/tags/contextapi/"
+  },
+  {
+    "path": "/tags/docs/1/",
+    "canonical": "https://astro-paper.pages.dev/tags/docs/1/"
+  },
+  {
+    "path": "/tags/docs/2/",
+    "canonical": "https://astro-paper.pages.dev/tags/docs/2/"
+  },
+  {
+    "path": "/tags/docs/",
+    "canonical": "https://astro-paper.pages.dev/tags/docs/"
+  },
+  {
+    "path": "/tags/faq/1/",
+    "canonical": "https://astro-paper.pages.dev/tags/faq/1/"
+  },
+  {
+    "path": "/tags/faq/2/",
+    "canonical": "https://astro-paper.pages.dev/tags/faq/2/"
+  },
+  {
+    "path": "/tags/faq/",
+    "canonical": "https://astro-paper.pages.dev/tags/faq/"
+  },
+  {
+    "path": "/tags/forestry-cms/1/",
+    "canonical": "https://astro-paper.pages.dev/tags/forestry-cms/1/"
+  },
+  {
+    "path": "/tags/forestry-cms/",
+    "canonical": "https://astro-paper.pages.dev/tags/forestry-cms/"
+  },
+  {
+    "path": "/tags/headlesscms/1/",
+    "canonical": "https://astro-paper.pages.dev/tags/headlesscms/1/"
+  },
+  {
+    "path": "/tags/headlesscms/",
+    "canonical": "https://astro-paper.pages.dev/tags/headlesscms/"
+  },
+  {
+    "path": "/tags/",
+    "canonical": "https://astro-paper.pages.dev/tags/"
+  },
+  {
+    "path": "/tags/javascript/1/",
+    "canonical": "https://astro-paper.pages.dev/tags/javascript/1/"
+  },
+  {
+    "path": "/tags/javascript/",
+    "canonical": "https://astro-paper.pages.dev/tags/javascript/"
+  },
+  {
+    "path": "/tags/nextjs/1/",
+    "canonical": "https://astro-paper.pages.dev/tags/nextjs/1/"
+  },
+  {
+    "path": "/tags/nextjs/",
+    "canonical": "https://astro-paper.pages.dev/tags/nextjs/"
+  },
+  {
+    "path": "/tags/reactjs/1/",
+    "canonical": "https://astro-paper.pages.dev/tags/reactjs/1/"
+  },
+  {
+    "path": "/tags/reactjs/",
+    "canonical": "https://astro-paper.pages.dev/tags/reactjs/"
+  },
+  {
+    "path": "/tags/release/1/",
+    "canonical": "https://astro-paper.pages.dev/tags/release/1/"
+  },
+  {
+    "path": "/tags/release/2/",
+    "canonical": "https://astro-paper.pages.dev/tags/release/2/"
+  },
+  {
+    "path": "/tags/release/",
+    "canonical": "https://astro-paper.pages.dev/tags/release/"
+  },
+  {
+    "path": "/tags/styled-components/1/",
+    "canonical": "https://astro-paper.pages.dev/tags/styled-components/1/"
+  },
+  {
+    "path": "/tags/styled-components/",
+    "canonical": "https://astro-paper.pages.dev/tags/styled-components/"
+  },
+  {
+    "path": "/tags/tailwindcss/1/",
+    "canonical": "https://astro-paper.pages.dev/tags/tailwindcss/1/"
+  },
+  {
+    "path": "/tags/tailwindcss/",
+    "canonical": "https://astro-paper.pages.dev/tags/tailwindcss/"
+  },
+  {
+    "path": "/tags/typescript/1/",
+    "canonical": "https://astro-paper.pages.dev/tags/typescript/1/"
+  },
+  {
+    "path": "/tags/typescript/",
+    "canonical": "https://astro-paper.pages.dev/tags/typescript/"
+  }
+]

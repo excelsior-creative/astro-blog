@@ -1,5 +1,7 @@
 import { defineConfig } from "astro/config";
-import tailwind from "@astrojs/tailwind";
+import tailwind from "tailwindcss";
+import autoprefixer from "autoprefixer";
+import { unified } from "@astrojs/markdown-remark";
 import react from "@astrojs/react";
 import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
@@ -9,29 +11,35 @@ import { SITE } from "./src/config";
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
-  integrations: [
-    tailwind({
-      applyBaseStyles: false,
-    }),
-    react(),
-    sitemap(),
-  ],
+  compressHTML: true,
+  integrations: [react(), sitemap()],
   markdown: {
-    remarkPlugins: [
-      remarkToc,
-      [
-        remarkCollapse,
-        {
-          test: "Table of contents",
-        },
+    processor: unified({
+      remarkPlugins: [
+        remarkToc,
+        [
+          remarkCollapse,
+          {
+            test: "Table of contents",
+          },
+        ],
       ],
-    ],
+    }),
     shikiConfig: {
       theme: "one-dark-pro",
-      wrap: true,
+      transformers: [
+        {
+          name: "preserve-code-wrapping",
+          pre(node) {
+            node.properties.style +=
+              ";white-space:pre-wrap;word-wrap:break-word";
+          },
+        },
+      ],
     },
   },
   vite: {
+    css: { postcss: { plugins: [tailwind(), autoprefixer()] } },
     optimizeDeps: {
       exclude: ["@resvg/resvg-js"],
     },
