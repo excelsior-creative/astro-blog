@@ -4,7 +4,14 @@ import { createServer } from "node:http";
 import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { runInNewContext } from "node:vm";
-import { mkdtempSync, mkdirSync, writeFileSync, rmSync } from "node:fs";
+import {
+  mkdtempSync,
+  mkdirSync,
+  writeFileSync,
+  readFileSync,
+  existsSync,
+  rmSync,
+} from "node:fs";
 import { tmpdir } from "node:os";
 import { checkContentImages } from "./check-content-images.mjs";
 
@@ -28,6 +35,26 @@ const verify = (ok, label) => {
   assert.ok(ok, label);
   cases.push(label);
 };
+
+const temporaryFile = createRequire(require.resolve("external-editor"))(
+  "tmp"
+).fileSync({
+  prefix: "astro-security-",
+  mode: 0o600,
+});
+try {
+  writeFileSync(temporaryFile.name, "editor fixture");
+  verify(
+    readFileSync(temporaryFile.name, "utf8") === "editor fixture",
+    "the patched temporary-file API remains compatible with the commit editor"
+  );
+} finally {
+  temporaryFile.removeCallback();
+}
+verify(
+  !existsSync(temporaryFile.name),
+  "the commit editor's temporary-file API cleans up its owned file"
+);
 
 const contentFixture = mkdtempSync(resolve(tmpdir(), "astro-blog-og-"));
 try {

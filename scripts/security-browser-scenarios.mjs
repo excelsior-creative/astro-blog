@@ -67,6 +67,14 @@ export async function checkPage(page, origin, { touch = false } = {}) {
     (await page.title()) === "AstroPaper",
     "home retains the AstroPaper title"
   );
+  verify(
+    (await page
+      .locator("main .social-icons .link-button")
+      .first()
+      .evaluate(link => getComputedStyle(link).padding)) ===
+      (touch ? "8px" : "4px"),
+    "social links retain responsive padding across the component boundary"
+  );
   if (touch) {
     await activate(
       page.getByRole("button", { name: "Open Menu", exact: true })
@@ -137,6 +145,18 @@ export async function checkPage(page, origin, { touch = false } = {}) {
     "frontmatter social-image metadata points to an emitted real image"
   );
 
+  verify(
+    await page
+      .locator("main .social-icons .link-button")
+      .first()
+      .evaluate(
+        link =>
+          Number(
+            new DOMMatrixReadOnly(getComputedStyle(link).transform).a.toFixed(1)
+          ) === 0.9
+      ),
+    "share links retain their original scale across the component boundary"
+  );
   const toc = page.locator("article details").first();
   verify(
     (await toc.count()) === 1 &&
@@ -185,6 +205,12 @@ export async function checkPage(page, origin, { touch = false } = {}) {
   cases.push("article back-to-top control scrolls the document");
 
   await page.goto(origin + "/posts/");
+  verify(
+    (await page
+      .locator('.pagination-wrapper [aria-disabled="true"]')
+      .evaluate(link => getComputedStyle(link).opacity)) === "0.5",
+    "disabled pagination retains its muted appearance across the component boundary"
+  );
   await activate(page.getByRole("link", { name: "Next", exact: true }));
   await page.waitForURL(origin + "/posts/2/");
   verify(

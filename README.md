@@ -176,7 +176,9 @@ current completed Socket inventory for the merged default-branch commit.
 
 The Astro 7 migration keeps React 18, Tailwind 3, content/frontmatter, public copy
 and Jampack 0.23.2. Direct PostCSS integration replaces the Astro Tailwind adapter,
-whose peer range excludes Astro 7. The explicit remark processor retains TOC and
+whose peer range excludes Astro 7. LinkButton explicitly forwards parent scope classes/attributes to preserve
+social/share-link padding and disabled-pagination styles. The explicit remark
+processor retains TOC and
 collapse plugins, the Shiki transformer preserves code wrapping, and content
 entries use `id`/`render(entry)` while retaining frontmatter slugs. The PNG route moves to
 `[slug].png.ts` to preserve the original flat endpoints. Imported frontmatter
