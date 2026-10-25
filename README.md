@@ -145,6 +145,87 @@ All commands are run from the root of the project, from a terminal:
 
 > **_Warning!_** Windows PowerShell users may need to install the [concurrently package](https://www.npmjs.com/package/concurrently) if they want to [run diagnostics](https://docs.astro.build/en/reference/cli-reference/#astro-check) during development (`astro check --watch & astro dev`). For more info, see [this issue](https://github.com/satnaing/astro-paper/issues/113).
 
+## Dependency security
+
+Use Node 22.12 or newer (CI checks Node 22 and 24) with npm 10.9.9 and the
+committed `package-lock.json`. The development Compose image also uses Node
+22.23.4; its configuration is validated, but the container runtime is not part
+of the Node/browser qualification below:
+
+```sh
+npm ci
+npm audit --audit-level=high
+npm run security:runtime
+npm run lint
+npm run validate
+npm exec -- playwright install chromium
+npm run security:browser
+```
+
+`validate` checks actual Astro files and runs the normal Astro build followed by
+Jampack. The diagnostics wrapper rejects a zero-file result. TypeScript 5.9 is
+needed for the newer Astro tsconfig's `${configDir}` paths; the old TypeScript
+5.3 silently checked zero files with that configuration.
+
+The security workflow uses pinned actions, checks the PR's exact source commit,
+has read-only contents permission and no provider secrets, and fails its
+`Security workspace` aggregate if either Node job fails, is cancelled or is
+skipped. Preserve the existing app-pinned `Socket Security: Pull Request Alerts`
+rule. Add the aggregate as required only after successful hosted checks and a
+current completed Socket inventory for the merged default-branch commit.
+
+The Astro 7 migration keeps React 18, Tailwind 3, content/frontmatter, public copy
+and Jampack 0.23.2. Direct PostCSS integration replaces the Astro Tailwind adapter,
+whose peer range excludes Astro 7. LinkButton explicitly forwards parent scope classes/attributes to preserve
+social/share-link padding and disabled-pagination styles. The explicit remark
+processor retains TOC and
+collapse plugins, the Shiki transformer preserves code wrapping, and content
+entries use `id`/`render(entry)` while retaining frontmatter slugs. The PNG route moves to
+`[slug].png.ts` to preserve the original flat endpoints. Imported frontmatter
+images use `getImage()` so their metadata refers to emitted assets. A build-time
+check validates the original 1200 by 630 minimum for relative images, including
+drafts, because content-layer schemas resolve image metadata after parsing. Framework
+asset names may change; the legacy article/tag/pagination, RSS, sitemap and
+twelve generated OG endpoint URLs are covered by the fixtures.
+
+Scoped npm overrides patch Jampack's Sharp 0.35.5, Undici 6.29.1, esbuild 0.25.12,
+file-type 21.3.4 and SVGO 3.3.5 without replacing its optimizer. Other
+version-scoped overrides patch vulnerable CLI/parser leaves. The selector parser
+and temporary-file fixes cross older major ranges because those ranges have no
+patched releases. Retain the native, full build and browser qualification when
+updating or removing these overrides. Compatible unrelated direct resolved
+versions remain unchanged. Avoid forced audit fixes and blanket alert ignores.
+
+The native fixture runs Jampack's actual image/JavaScript compressors, AVIF
+encoding/decoding, SVG handling, image detection, an owned-loopback Undici fetch,
+and the production draft/scheduled-post sorter. Browser checks exercise the 65
+legacy routes, real React/Fuse search, theme/client navigation, touch menu,
+TOC/heading/code-copy controls, pagination, local images, metadata and actual OG
+PNG dimensions. They own a preview at `127.0.0.1:43140`, refuse an occupied port
+or local runtime environment files, and stop it afterwards. Existing remote
+editorial media and Google Fonts are excluded from this loopback-only test.
+The build retains its existing public OG font downloads and real Satori/Resvg
+generation. These checks do not certify remote media availability or a deployed
+site.
+
+The old Astro Studio workflow only checked `astro:db` schemas. This repository
+has no Astro DB integration, and [Astro Studio shut down on March 1,
+2025](https://astro.build/blog/goodbye-astro-studio/). Read-only security CI
+replaces that unused mutable action and its PR-write permission. No remote DB,
+provider setting, credential or deployment is changed by this workflow.
+
+Brandon Johnson is the accountable security owner; the repository maintainer
+owns remediation. Triage malware/exploited findings immediately, critical
+findings within 24 hours and high findings within seven days. Record advisory,
+package/version, manifest, dev/runtime scope, exposure, owner, due date and exact
+patch/check/Socket evidence in a repository issue. Risk acceptance needs a
+bounded reason and review/expiry date. Follow the [fleet operations
+guide](https://github.com/excelsior-creative/all-workspaces/blob/main/docs/socket-security-operations.md)
+and [rollout tracker](https://github.com/excelsior-creative/all-workspaces/issues/6).
+Source checks, merge, provider publication and live verification remain separate
+claims; the existing upstream `SITE.website` is not proof of an Excelsior-hosted
+deployment.
+
 ## ✨ Feedback & Suggestions
 
 If you have any suggestions/feedback, you can contact me via [my email](mailto:contact@satnaing.dev). Alternatively, feel free to open an issue if you find bugs or want to request new features.
